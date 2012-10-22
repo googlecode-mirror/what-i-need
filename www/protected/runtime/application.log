@@ -1,0 +1,884 @@
+2012/05/20 23:48:56 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "validatePassword".' in Z:\home\win\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(226): CComponent->__call('validatePasswor...', Array)
+#1 [internal function]: CActiveRecord->__call('validatePasswor...', Array)
+#2 Z:\home\win\www\protected\components\UserIdentity.php(45): User->validatePassword('admin')
+#3 Z:\home\win\www\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 Z:\home\win\www\yii\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#5 Z:\home\win\www\yii\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 Z:\home\win\www\yii\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#7 Z:\home\win\www\protected\controllers\SiteController.php(88): CModel->validate()
+#8 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#9 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 Z:\home\win\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('login')
+#13 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#14 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\home\win\www\index.php(21): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://win/index.php?r=site/login
+---
+2012/05/21 12:25:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controlPanel".' in Z:\home\win\www\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('controlPanel')
+#1 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\home\win\www\index.php(21): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=controlPanel
+HTTP_REFERER=http://win/index.php
+---
+2012/05/21 13:20:23 [error] [exception.CException] exception 'CException' with message 'Unknown authorization item "admin".' in Z:\home\win\www\yii\framework\web\auth\CPhpAuthManager.php:177
+Stack trace:
+#0 Z:\home\win\www\protected\components\PhpAuthManager.php(16): CPhpAuthManager->assign('admin', '1')
+#1 Z:\home\win\www\yii\framework\base\CModule.php(388): PhpAuthManager->init()
+#2 Z:\home\win\www\yii\framework\web\CWebApplication.php(179): CModule->getComponent('authManager')
+#3 Z:\home\win\www\yii\framework\web\auth\CWebUser.php(794): CWebApplication->getAuthManager()
+#4 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(300): CWebUser->checkAccess('user')
+#5 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(240): CAccessRule->isRoleMatched(Object(WebUser))
+#6 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(116): CAccessRule->isUserAllowed(Object(WebUser), Object(ControlPanelController), Object(CInlineAction), '127.0.0.1', 'GET')
+#7 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#8 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#12 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('')
+#14 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('controlPanel')
+#15 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 Z:\home\win\www\index.php(21): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=controlPanel
+HTTP_REFERER=http://win/index.php
+---
+2012/05/21 23:11:36 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'гыуктфьу' in 'field list'. Выполнявшийся SQL-запрос: SELECT user_id, гыуктфьу FROM `users` `t` ORDER BY username.
+in Z:\home\win\www\protected\views\activity\_form.php (14)
+in Z:\home\win\www\protected\views\activity\create.php (9)
+in Z:\home\win\www\protected\controllers\ActivityController.php (78)
+2012/05/21 23:11:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'гыуктфьу' in 'field list'. The SQL statement executed was: SELECT user_id, гыуктфьу FROM `users` `t` ORDER BY username' in Z:\home\win\www\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 Z:\home\win\www\protected\views\activity\_form.php(14): CActiveRecord->findAll(Object(CDbCriteria))
+#4 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#5 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#6 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#7 Z:\home\win\www\protected\views\activity\create.php(9): CController->renderPartial('_form', Array)
+#8 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#9 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#10 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#11 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#12 Z:\home\win\www\protected\controllers\ActivityController.php(78): CController->render('create', Array)
+#13 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): ActivityController->actionCreate()
+#14 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#15 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#17 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#18 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#19 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#23 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('activity/create')
+#24 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 Z:\home\win\www\index.php(21): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=activity/create
+HTTP_REFERER=http://win/index.php?r=activity/admin
+---
+2012/05/21 23:11:46 [error] [exception.CException] exception 'CException' with message 'В классе BootActiveForm и его поведениях не найден метод или замыкание с именем "textDropDownListRow".' in Z:\home\win\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 [internal function]: CComponent->__call('textDropDownLis...', Array)
+#1 Z:\home\win\www\protected\views\activity\_form.php(16): BootActiveForm->textDropDownListRow(Object(Activity), 'author_id', Array, Array)
+#2 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#3 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#4 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#5 Z:\home\win\www\protected\views\activity\create.php(9): CController->renderPartial('_form', Array)
+#6 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#7 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#8 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#9 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#10 Z:\home\win\www\protected\controllers\ActivityController.php(78): CController->render('create', Array)
+#11 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): ActivityController->actionCreate()
+#12 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#21 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('activity/create')
+#22 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 Z:\home\win\www\index.php(21): CApplication->run()
+#24 {main}
+REQUEST_URI=/index.php?r=activity/create
+HTTP_REFERER=http://win/index.php?r=activity/admin
+---
+2012/05/21 23:11:57 [error] [php] Object of class User could not be converted to string (Z:\home\win\www\yii\framework\web\helpers\CHtml.php:1865)
+Stack trace:
+#0 Z:\home\win\www\protected\extensions\bootstrap\widgets\input\BootInputVertical.php(73): BootActiveForm->dropDownList()
+#1 Z:\home\win\www\protected\extensions\bootstrap\widgets\input\BootInput.php(96): BootInputVertical->dropDownList()
+#2 Z:\home\win\www\yii\framework\web\CBaseController.php(174): BootInputVertical->run()
+#3 Z:\home\win\www\protected\extensions\bootstrap\widgets\BootActiveForm.php(493): ActivityController->widget()
+#4 Z:\home\win\www\protected\extensions\bootstrap\widgets\BootActiveForm.php(106): BootActiveForm->inputRow()
+#5 Z:\home\win\www\protected\views\activity\_form.php(16): BootActiveForm->dropDownListRow()
+#6 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require()
+#7 Z:\home\win\www\yii\framework\web\CBaseController.php(96): ActivityController->renderInternal()
+#8 Z:\home\win\www\yii\framework\web\CController.php(870): ActivityController->renderFile()
+#9 Z:\home\win\www\protected\views\activity\create.php(9): ActivityController->renderPartial()
+#10 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require()
+#11 Z:\home\win\www\yii\framework\web\CBaseController.php(96): ActivityController->renderInternal()
+#12 Z:\home\win\www\yii\framework\web\CController.php(870): ActivityController->renderFile()
+#13 Z:\home\win\www\yii\framework\web\CController.php(783): ActivityController->renderPartial()
+#14 Z:\home\win\www\protected\controllers\ActivityController.php(78): ActivityController->render()
+#15 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): ActivityController->actionCreate()
+#16 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#17 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): ActivityController->runAction()
+#18 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#19 Z:\home\win\www\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#20 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): ActivityController->filterAccessControl()
+#21 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#22 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#23 Z:\home\win\www\yii\framework\web\CController.php(266): ActivityController->runActionWithFilters()
+#24 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): ActivityController->run()
+#25 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#26 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 Z:\home\win\www\index.php(21): CWebApplication->run()
+REQUEST_URI=/index.php?r=activity/create
+in Z:\home\win\www\protected\extensions\bootstrap\widgets\input\BootInputVertical.php (73)
+in Z:\home\win\www\protected\extensions\bootstrap\widgets\input\BootInput.php (96)
+in Z:\home\win\www\protected\extensions\bootstrap\widgets\BootActiveForm.php (493)
+2012/05/21 23:35:02 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Некорректный запрос.' in Z:\home\win\www\yii\framework\web\CController.php:337
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#9 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('User/update')
+#10 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 Z:\home\win\www\index.php(21): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=User/update
+HTTP_REFERER=http://win/index.php?r=controlPanel
+---
+2012/05/21 23:35:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\home\win\www\protected\controllers\UserController.php:160
+Stack trace:
+#0 Z:\home\win\www\protected\controllers\UserController.php(88): UserController->loadModel(0)
+#1 [internal function]: UserController->actionUpdate(0)
+#2 Z:\home\win\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#3 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#4 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#13 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('User/update')
+#14 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\home\win\www\index.php(21): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=User/update
+HTTP_REFERER=http://win/index.php?r=controlPanel
+---
+2012/05/21 23:35:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\home\win\www\protected\controllers\UserController.php:160
+Stack trace:
+#0 Z:\home\win\www\protected\controllers\UserController.php(88): UserController->loadModel('')
+#1 [internal function]: UserController->actionUpdate('')
+#2 Z:\home\win\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#3 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#4 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#13 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('User/update')
+#14 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\home\win\www\index.php(21): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=User/update
+HTTP_REFERER=http://win/index.php?r=controlPanel
+---
+2012/05/21 23:36:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\home\win\www\protected\controllers\UserController.php:160
+Stack trace:
+#0 Z:\home\win\www\protected\controllers\UserController.php(88): UserController->loadModel('')
+#1 [internal function]: UserController->actionUpdate('')
+#2 Z:\home\win\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#3 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#4 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#13 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('User/update')
+#14 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\home\win\www\index.php(21): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=User/update
+HTTP_REFERER=http://win/index.php?r=controlPanel
+---
+2012/05/21 23:37:53 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "WebUser.level".' in Z:\home\win\www\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CWebUser.php(141): CComponent->__get('level')
+#1 Z:\home\win\www\protected\controllers\UserController.php(82): CWebUser->__get('level')
+#2 [internal function]: UserController->actionUpdate('')
+#3 Z:\home\win\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#4 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#5 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#12 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#14 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('User/update')
+#15 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 Z:\home\win\www\index.php(21): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=User/update
+HTTP_REFERER=http://win/index.php?r=controlPanel
+---
+2012/05/21 23:38:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/create')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/create
+HTTP_REFERER=http://win/index.php?r=User/update
+---
+2012/05/21 23:38:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/admin')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://win/index.php?r=User/update
+---
+2012/05/21 23:38:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/admin')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://win/index.php?r=user/view&id=2
+---
+2012/05/21 23:38:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "password".' in Z:\home\win\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\CController.php(271): CController->missingAction('password')
+#1 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('password')
+#2 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('User/password')
+#3 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\win\www\index.php(21): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=User/password
+HTTP_REFERER=http://win/index.php?r=controlPanel
+---
+2012/05/21 23:40:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('password')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('User/password')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=User/password
+HTTP_REFERER=http://win/index.php?r=controlPanel
+---
+2012/05/21 23:41:51 [error] [exception.CException] exception 'CException' with message 'В классе User и его поведениях не найден метод или замыкание с именем "isAdmin".' in Z:\home\win\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(226): CComponent->__call('isAdmin', Array)
+#1 [internal function]: CActiveRecord->__call('isAdmin', Array)
+#2 Z:\home\win\www\protected\controllers\UserController.php(133): User->isAdmin()
+#3 [internal function]: UserController->actionPassword('')
+#4 Z:\home\win\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#5 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#6 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#13 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('password')
+#15 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('User/password')
+#16 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 Z:\home\win\www\index.php(21): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=User/password
+HTTP_REFERER=http://win/index.php?r=User/password
+---
+2012/05/24 23:57:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/index')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/index
+HTTP_REFERER=http://win/index.php?r=user/admin
+---
+2012/05/25 00:16:50 [error] [exception.CException] exception 'CException' with message 'BootInput: Failed to initialize widget! Model is not set.' in Z:\home\win\www\protected\extensions\bootstrap\widgets\input\BootInput.php:60
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\CBaseController.php(148): BootInput->init()
+#1 Z:\home\win\www\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#2 Z:\home\win\www\protected\extensions\bootstrap\widgets\BootActiveForm.php(493): CBaseController->widget('bootstrap.widge...', Array)
+#3 Z:\home\win\www\protected\extensions\bootstrap\widgets\BootActiveForm.php(180): BootActiveForm->inputRow('textfield', NULL, 'make', NULL, Array)
+#4 Z:\home\win\www\protected\views\site\index.php(13): BootActiveForm->textFieldRow(NULL, 'make', Array)
+#5 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#6 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', NULL, true)
+#7 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', NULL, true)
+#8 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#9 Z:\home\win\www\protected\controllers\SiteController.php(32): CController->render('index')
+#10 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#11 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 Z:\home\win\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#13 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#15 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#16 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 Z:\home\win\www\index.php(21): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/index
+HTTP_REFERER=http://win/index.php?r=controlPanel
+---
+2012/05/25 00:23:01 [error] [exception.CException] exception 'CException' with message 'BootInput: Failed to initialize widget! Model is not set.' in Z:\home\win\www\protected\extensions\bootstrap\widgets\input\BootInput.php:60
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\CBaseController.php(148): BootInput->init()
+#1 Z:\home\win\www\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#2 Z:\home\win\www\protected\extensions\bootstrap\widgets\BootActiveForm.php(493): CBaseController->widget('bootstrap.widge...', Array)
+#3 Z:\home\win\www\protected\extensions\bootstrap\widgets\BootActiveForm.php(180): BootActiveForm->inputRow('textfield', NULL, 'make', NULL, Array)
+#4 Z:\home\win\www\protected\views\site\index.php(13): BootActiveForm->textFieldRow(NULL, 'make', Array)
+#5 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#6 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', NULL, true)
+#7 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', NULL, true)
+#8 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#9 Z:\home\win\www\protected\controllers\SiteController.php(32): CController->render('index')
+#10 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#11 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 Z:\home\win\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#13 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#15 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#16 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 Z:\home\win\www\index.php(21): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/index
+HTTP_REFERER=http://win/index.php?r=controlPanel
+---
+2012/05/25 00:23:52 [error] [exception.CException] exception 'CException' with message 'BootInput: Failed to initialize widget! Model is not set.' in Z:\home\win\www\protected\extensions\bootstrap\widgets\input\BootInput.php:60
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\CBaseController.php(148): BootInput->init()
+#1 Z:\home\win\www\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#2 Z:\home\win\www\protected\extensions\bootstrap\widgets\BootActiveForm.php(493): CBaseController->widget('bootstrap.widge...', Array)
+#3 Z:\home\win\www\protected\extensions\bootstrap\widgets\BootActiveForm.php(180): BootActiveForm->inputRow('textfield', NULL, 'make', NULL, Array)
+#4 Z:\home\win\www\protected\views\site\index.php(13): BootActiveForm->textFieldRow(NULL, 'make', Array)
+#5 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#6 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', NULL, true)
+#7 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', NULL, true)
+#8 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#9 Z:\home\win\www\protected\controllers\SiteController.php(33): CController->render('index')
+#10 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#11 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 Z:\home\win\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#13 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#15 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#16 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 Z:\home\win\www\index.php(21): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/index
+HTTP_REFERER=http://win/index.php?r=controlPanel
+---
+2012/05/25 00:33:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('activity/admin')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=activity/admin
+HTTP_REFERER=http://win/index.php?r=activity/create
+---
+2012/05/25 00:34:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('activity/admin')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=activity/admin
+HTTP_REFERER=http://win/index.php?r=activity/view&id=7
+---
+2012/05/25 00:47:49 [error] [php] Missing argument 1 for CModel::getError(), called in Z:\home\win\www\protected\controllers\ActivityController.php on line 86 and defined (Z:\home\win\www\yii\framework\base\CModel.php:369)
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): ActivityController->runAction()
+#2 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 Z:\home\win\www\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): ActivityController->filterAccessControl()
+#5 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 Z:\home\win\www\yii\framework\web\CController.php(266): ActivityController->runActionWithFilters()
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): ActivityController->run()
+#9 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 Z:\home\win\www\index.php(21): CWebApplication->run()
+REQUEST_URI=/index.php?r=activity/create
+in Z:\home\win\www\protected\controllers\ActivityController.php (86)
+in Z:\home\win\www\index.php (21)
+2012/05/25 00:52:54 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "ActivityUser.user".' in Z:\home\win\www\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('user')
+#1 Z:\home\win\www\protected\views\site\index.php(6): CActiveRecord->__get('user')
+#2 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#3 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#4 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#5 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 Z:\home\win\www\protected\controllers\SiteController.php(34): CController->render('index', Array)
+#7 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#8 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 Z:\home\win\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#12 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#13 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 Z:\home\win\www\index.php(21): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=site/index
+HTTP_REFERER=http://win/index.php?r=activity/view&id=15
+---
+2012/05/25 00:59:12 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where) as activity_desc FROM `users` `t` ORDER BY activity_id' at line 1. Выполнявшийся SQL-запрос: SELECT activity_id, CONCAT(make,' ',what,' ',where) as activity_desc FROM `users` `t` ORDER BY activity_id.
+in Z:\home\win\www\protected\views\site\index.php (36)
+in Z:\home\win\www\protected\controllers\SiteController.php (34)
+in Z:\home\win\www\index.php (21)
+2012/05/25 00:59:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where) as activity_desc FROM `users` `t` ORDER BY activity_id' at line 1. The SQL statement executed was: SELECT activity_id, CONCAT(make,' ',what,' ',where) as activity_desc FROM `users` `t` ORDER BY activity_id' in Z:\home\win\www\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 Z:\home\win\www\protected\views\site\index.php(36): CActiveRecord->findAll(Object(CDbCriteria))
+#4 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#5 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#6 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#7 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#8 Z:\home\win\www\protected\controllers\SiteController.php(34): CController->render('index', Array)
+#9 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 Z:\home\win\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#14 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#15 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 Z:\home\win\www\index.php(21): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=site/index
+HTTP_REFERER=http://win/index.php?r=activity/view&id=15
+---
+2012/05/25 00:59:24 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where) as activity_desc FROM `activities` `t` ORDER BY activity_id' at line 1. Выполнявшийся SQL-запрос: SELECT activity_id, CONCAT(make,' ',what,' ',where) as activity_desc FROM `activities` `t` ORDER BY activity_id.
+in Z:\home\win\www\protected\views\site\index.php (36)
+in Z:\home\win\www\protected\controllers\SiteController.php (34)
+in Z:\home\win\www\index.php (21)
+2012/05/25 00:59:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where) as activity_desc FROM `activities` `t` ORDER BY activity_id' at line 1. The SQL statement executed was: SELECT activity_id, CONCAT(make,' ',what,' ',where) as activity_desc FROM `activities` `t` ORDER BY activity_id' in Z:\home\win\www\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 Z:\home\win\www\protected\views\site\index.php(36): CActiveRecord->findAll(Object(CDbCriteria))
+#4 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#5 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#6 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#7 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#8 Z:\home\win\www\protected\controllers\SiteController.php(34): CController->render('index', Array)
+#9 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 Z:\home\win\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#14 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#15 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 Z:\home\win\www\index.php(21): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=site/index
+HTTP_REFERER=http://win/index.php?r=activity/view&id=15
+---
+2012/05/25 01:00:38 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Activity.activity_desc".' in Z:\home\win\www\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('activity_desc')
+#1 Z:\home\win\www\yii\framework\web\helpers\CHtml.php(1696): CActiveRecord->__get('activity_desc')
+#2 Z:\home\win\www\yii\framework\web\helpers\CHtml.php(1660): CHtml::value(Object(Activity), 'activity_desc')
+#3 Z:\home\win\www\protected\views\site\index.php(38): CHtml::listData(Array, 'activity_id', 'activity_desc')
+#4 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#5 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#6 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#7 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#8 Z:\home\win\www\protected\controllers\SiteController.php(34): CController->render('index', Array)
+#9 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 Z:\home\win\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#14 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#15 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 Z:\home\win\www\index.php(21): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=site/index
+HTTP_REFERER=http://win/index.php?r=activity/view&id=15
+---
+2012/05/25 01:02:07 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Activity.activity_desc".' in Z:\home\win\www\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('activity_desc')
+#1 Z:\home\win\www\yii\framework\web\helpers\CHtml.php(1696): CActiveRecord->__get('activity_desc')
+#2 Z:\home\win\www\yii\framework\web\helpers\CHtml.php(1660): CHtml::value(Object(Activity), 'activity_desc')
+#3 Z:\home\win\www\protected\views\site\index.php(38): CHtml::listData(Array, 'activity_id', 'activity_desc')
+#4 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#5 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#6 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#7 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#8 Z:\home\win\www\protected\controllers\SiteController.php(34): CController->render('index', Array)
+#9 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 Z:\home\win\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#14 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#15 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 Z:\home\win\www\index.php(21): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=site/index
+HTTP_REFERER=http://win/index.php?r=activity/view&id=15
+---
+2012/05/25 01:10:05 [warning] [application] Не удалось присвоить небезопасный атрибут "activity_id" класса "Activity".
+in Z:\home\win\www\protected\controllers\ActivityController.php (72)
+in Z:\home\win\www\index.php (21)
+2012/05/25 01:10:55 [warning] [application] Не удалось присвоить небезопасный атрибут "activity_id" класса "Activity".
+in Z:\home\win\www\protected\controllers\ActivityController.php (72)
+in Z:\home\win\www\index.php (21)
+2012/05/25 14:16:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "profile".' in Z:\home\win\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\CController.php(271): CController->missingAction('profile')
+#1 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('profile')
+#2 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/profile')
+#3 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\win\www\index.php(21): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/profile&id=2
+HTTP_REFERER=http://win/index.php?r=site/index
+---
+2012/05/25 14:24:42 [warning] [application] Не удалось присвоить небезопасный атрибут "activity_id" класса "Activity".
+in Z:\home\win\www\protected\controllers\ActivityController.php (75)
+in Z:\home\win\www\index.php (21)
+2012/05/25 14:25:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "profile".' in Z:\home\win\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\CController.php(271): CController->missingAction('profile')
+#1 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('profile')
+#2 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/profile')
+#3 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\win\www\index.php(21): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/profile&id=2
+HTTP_REFERER=http://win/index.php?r=site/index
+---
+2012/05/25 14:30:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('profile')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/profile')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/profile&id=2
+HTTP_REFERER=http://win/index.php?r=site/index
+---
+2012/05/25 14:31:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('profile')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/profile')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/profile&id=2
+HTTP_REFERER=http://win/index.php?r=site/index
+---
+2012/05/25 14:31:20 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'activities.user_id' in 'where clause'. Выполнявшийся SQL-запрос: SELECT `activities`.`activity_id` AS `t1_c0`, `activities`.`create_time` AS `t1_c1`, `activities`.`update_time` AS `t1_c2`, `activities`.`author_id` AS `t1_c3`, `activities`.`make` AS `t1_c4`, `activities`.`what` AS `t1_c5`, `activities`.`where` AS `t1_c6` FROM `activities` `activities`  WHERE (`activities`.`user_id`=:ypl0).
+in Z:\home\win\www\protected\views\user\profile.php (22)
+in Z:\home\win\www\protected\controllers\UserController.php (58)
+in Z:\home\win\www\index.php (21)
+2012/05/25 14:31:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'activities.user_id' in 'where clause'. The SQL statement executed was: SELECT `activities`.`activity_id` AS `t1_c0`, `activities`.`create_time` AS `t1_c1`, `activities`.`update_time` AS `t1_c2`, `activities`.`author_id` AS `t1_c3`, `activities`.`make` AS `t1_c4`, `activities`.`what` AS `t1_c5`, `activities`.`where` AS `t1_c6` FROM `activities` `activities`  WHERE (`activities`.`user_id`=:ypl0)' in Z:\home\win\www\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 Z:\home\win\www\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 Z:\home\win\www\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 Z:\home\win\www\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(User))
+#4 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(User))
+#5 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('activities')
+#6 Z:\home\win\www\protected\views\user\profile.php(22): CActiveRecord->__get('activities')
+#7 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#8 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#9 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#10 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('profile', Array, true)
+#11 Z:\home\win\www\protected\controllers\UserController.php(58): CController->render('profile', Array)
+#12 [internal function]: UserController->actionProfile('2')
+#13 Z:\home\win\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#14 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#15 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#18 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('profile')
+#24 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/profile')
+#25 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 Z:\home\win\www\index.php(21): CApplication->run()
+#27 {main}
+REQUEST_URI=/index.php?r=user/profile&id=2
+HTTP_REFERER=http://win/index.php?r=site/index
+---
+2012/05/25 14:31:46 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Activity.user".' in Z:\home\win\www\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('user')
+#1 Z:\home\win\www\protected\views\user\profile.php(31): CActiveRecord->__get('user')
+#2 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#3 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#4 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#5 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('profile', Array, true)
+#6 Z:\home\win\www\protected\controllers\UserController.php(58): CController->render('profile', Array)
+#7 [internal function]: UserController->actionProfile('2')
+#8 Z:\home\win\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#9 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#10 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#17 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('profile')
+#19 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/profile')
+#20 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 Z:\home\win\www\index.php(21): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/profile&id=2
+HTTP_REFERER=http://win/index.php?r=site/index
+---
+2012/05/25 14:36:24 [error] [exception.CException] exception 'CException' with message 'В классе User и его поведениях не найден метод или замыкание с именем "isFreindWith".' in Z:\home\win\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(226): CComponent->__call('isFreindWith', Array)
+#1 [internal function]: CActiveRecord->__call('isFreindWith', Array)
+#2 Z:\home\win\www\protected\views\user\profile.php(13): User->isFreindWith('4')
+#3 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#4 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#5 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#6 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('profile', Array, true)
+#7 Z:\home\win\www\protected\controllers\UserController.php(58): CController->render('profile', Array)
+#8 [internal function]: UserController->actionProfile('2')
+#9 Z:\home\win\www\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#10 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#11 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 Z:\home\win\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('profile')
+#20 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/profile')
+#21 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 Z:\home\win\www\index.php(21): CApplication->run()
+#23 {main}
+REQUEST_URI=/index.php?r=user/profile&id=2
+HTTP_REFERER=http://win/index.php?r=site/index
+---
+2012/05/25 14:42:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "addFriend".' in Z:\home\win\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\CController.php(271): CController->missingAction('addFriend')
+#1 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('addFriend')
+#2 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/addFriend')
+#3 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\win\www\index.php(21): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/addFriend&id=2
+HTTP_REFERER=http://win/index.php?r=user/profile&id=2
+---
+2012/05/25 14:48:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "addFriend".' in Z:\home\win\www\yii\framework\web\CController.php:484
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\CController.php(271): CController->missingAction('addFriend')
+#1 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('addFriend')
+#2 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/addFriend')
+#3 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 Z:\home\win\www\index.php(21): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/addFriend&id=2
+HTTP_REFERER=http://win/index.php?r=user/profile&id=2
+---
+2012/05/25 14:48:40 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('profile')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/profile')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/profile&id=2
+HTTP_REFERER=http://win/index.php?r=user/profile&id=2
+---
+2012/05/25 14:49:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('profile')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/profile')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/profile&id=2
+HTTP_REFERER=http://win/index.php
+---
+2012/05/25 14:49:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\home\win\www\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), '?? ?????? ?????...')
+#1 Z:\home\win\www\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\home\win\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\home\win\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\home\win\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\home\win\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('profile')
+#8 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/profile')
+#9 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\home\win\www\index.php(21): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/profile&id=2
+HTTP_REFERER=http://win/index.php
+---
+2012/05/25 15:08:52 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'activity_user.user_id' in 'on clause'. Выполнявшийся SQL-запрос: SELECT `t`.`rec_id`, `t`.`user_id`, `t`.`activity_id`, `t`.`create_time` FROM `activity_user` `t` LEFT JOIN friends ON activity_user.user_id=friends.to_id  WHERE friends.from_id=4.
+in Z:\home\win\www\protected\views\site\index.php (40)
+in Z:\home\win\www\protected\controllers\SiteController.php (34)
+in Z:\home\win\www\index.php (21)
+2012/05/25 15:08:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'activity_user.user_id' in 'on clause'. The SQL statement executed was: SELECT `t`.`rec_id`, `t`.`user_id`, `t`.`activity_id`, `t`.`create_time` FROM `activity_user` `t` LEFT JOIN friends ON activity_user.user_id=friends.to_id  WHERE friends.from_id=4' in Z:\home\win\www\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 Z:\home\win\www\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 Z:\home\win\www\yii\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 Z:\home\win\www\protected\views\site\index.php(40): CActiveRecord->findAll(Object(CDbCriteria))
+#4 Z:\home\win\www\yii\framework\web\CBaseController.php(127): require('Z:\home\win\www...')
+#5 Z:\home\win\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\win\www...', Array, true)
+#6 Z:\home\win\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\win\www...', Array, true)
+#7 Z:\home\win\www\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#8 Z:\home\win\www\protected\controllers\SiteController.php(34): CController->render('index', Array)
+#9 Z:\home\win\www\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 Z:\home\win\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 Z:\home\win\www\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 Z:\home\win\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 Z:\home\win\www\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#14 Z:\home\win\www\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#15 Z:\home\win\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 Z:\home\win\www\index.php(21): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=site/index
+HTTP_REFERER=http://win/index.php?r=controlPanel
+---
