@@ -1,3 +1,26 @@
+<?php
+if (Yii::app()->user->isGuest):
+	?>
+<h2>Добро пожаловать в W?N</h2>
+	<div>
+Войди/зарегистрируйся и ты сможешь:
+
+<br>1. Постоянно поддерживать связь..
+
+<br>2. Сообщать свой статус в социальные...
+
+<br>3. Привязывать активности к локациям...
+
+<br>4. Получать рекомендованные активности...
+	</div>
+
+<?php endif; ?>
+
+
+<?php
+if (!Yii::app()->user->isGuest):
+	?>
+<!-- тут все активности, мы их не покажем никому
 <h2>Все активности</h2>
 <table width="100%">
 <?php
@@ -25,10 +48,7 @@ foreach ($activities as $activity):
 endforeach;
 ?>
 </table>
-
-<?php
-if (!Yii::app()->user->isGuest):
-	?>
+-->
 
 <h2>Активности друзей</h2>
 <table width="100%">
@@ -62,7 +82,7 @@ endforeach;
 ?>
 </table>
 
-
+<!-- тут ввод активности, тут не будем показывать
 	<?php
 	/** @var BootActiveForm $form */
 	$form = $this->beginWidget('bootstrap.widgets.BootActiveForm', array(
@@ -94,5 +114,6 @@ endforeach;
 	</div>
 
 	<?php $this->endWidget(); ?>
+-->
 
 <?php endif; ?>

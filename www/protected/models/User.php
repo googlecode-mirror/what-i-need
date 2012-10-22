@@ -12,6 +12,11 @@
  */
 class User extends CActiveRecord {
 
+     
+    // для капчи
+    public $verifyCode;
+    // для поля "повтор пароля"
+    public $passwd2;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.

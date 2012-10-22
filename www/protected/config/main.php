@@ -86,4 +86,5 @@ return array(
 		'adminEmail' => 'webmaster@example.com',
 	),
 	'language' => 'ru',
+	'theme' => 'mobile-white-green',
 );

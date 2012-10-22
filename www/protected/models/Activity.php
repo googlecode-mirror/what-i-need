@@ -63,11 +63,15 @@ class Activity extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'activity_id' => '№',
+			'activity_id' => 'Выбрать активность',
 			'author_id' => 'Автор',
-			'make' => 'Что',
-			'what' => '?С чем',
+			'make' => 'Делаю',
+			'what' => 'Что/На чём/О чём и т.д.',
 			'where' => 'Где',
+			'begin' => 'Начало',
+			'end' => 'Окончание',
+			'additionalinfo' => 'Дополнительная информация',
+
 		);
 	}
 

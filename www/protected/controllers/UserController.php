@@ -25,7 +25,7 @@ class UserController extends Controller {
 	public function accessRules() {
 		return array(
 			array('allow', // allow all users to perform 'index' and 'view' actions
-				'actions' => array('view', 'profile'),
+				'actions' => array('view', 'profile', 'registration'),
 				'users' => array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -244,4 +244,108 @@ class UserController extends Controller {
 		$friends->delete();
 		$this->redirect(array("user/profile", "id" => $id));
 	}
+
+
+    public function actions()
+    {
+        return array(
+            // Создаем экшинс captcha.
+            // Он понадобиться нам для формы регистрации (да и авторизации)
+             'captcha'=>array(
+                'class'=>'CCaptchaAction',
+                'backColor'=> 0x003300,
+                'maxLength'=> 3,
+                'minLength'=> 3,
+                 'foreColor'=> 0x66FF66,
+            ),
+        );
+    }
+    
+    /**
+     * Метод входа на сайт
+     * 
+     * Метод в котором мы выводим форму авторизации
+     * и обрабатываем её на правильность.
+      */
+    public function actionLogin()
+    {
+    }    
+    
+    /**
+     * Метод выхода с сайта
+     * 
+     * Данный метод описывает в себе выход пользователя с сайта
+     * Т.е. кнопочка "выход"
+      */
+    public function actionLogout()
+    {
+    }
+    
+    /**
+     * Метод регистрации
+     *
+     * Выводим форму для регистрации пользователя и проверяем
+     * данные которые придут от неё.
+      */
+    public function actionRegistration()
+    {
+
+        // тут думаю все понятно
+        $form = new User();
+
+        // Проверяем являеться ли пользователь гостем
+        // ведь если он уже зарегистрирован - формы он не должен увидеть.
+        if (!Yii::app()->user->isGuest) {
+             throw new CException('Вы уже зарегистрированны!');
+        } else {
+            // Если $_POST['User'] не пустой массив - значит была отправлена форма
+            // следовательно нам надо заполнить $form этими данными
+             // и провести валидацию. Если валидация пройдет успешно - пользователь
+            // будет зарегистрирован, не успешно - покажем ошибку на экран
+            if (!empty($_POST['User'])) {
+                
+                 // Заполняем $form данными которые пришли с формы
+                $form->attributes = $_POST['User'];
+                
+                // Запоминаем данные которые пользователь ввёл в капче
+                 $form->verifyCode = $_POST['User']['verifyCode'];
+                
+                    // В validate мы передаем название сценария. Оно нам может понадобиться
+                    // когда будем заниматься созданием правил валидации [читайте дальше]
+                     if($form->validate('registration')) {
+                        // Если валидация прошла успешно...
+                        // Тогда проверяем свободен ли указанный логин..
+
+                            if ($form->model()->count("username = :username", array(':username' => $form->username))) {
+                                 // Указанный логин уже занят. Создаем ошибку и передаем в форму
+                                $form->addError('username', 'Логин уже занят');
+                                $this->render("registration", array('form' => $form));
+                             } else {
+                                // Выводим страницу что "все окей"
+                                $form->save();
+                                $this->render("registration_ok");
+                            }
+                                             
+                    } else {
+                        // Если введенные данные противоречат 
+                        // правилам валидации (указаны в rules) тогда
+                        // выводим форму и ошибки.
+                         // [Внимание!] Нам ненадо передавать ошибку в отображение,
+                        // Она автоматически после валидации цепляеться за 
+                        // $form и будет [автоматически] показана на странице с 
+                         // формой! Так что мы тут делаем простой рэндер.
+                        
+                        $this->render("registration", array('form' => $form));
+                    }
+             } else {
+                // Если $_POST['User'] пустой массив - значит форму некто не отправлял.
+                // Это значит что пользователь просто вошел на страницу регистрации
+                // и ему мы должны просто показать форму.
+                 
+                $this->render("registration", array('form' => $form));
+            }
+        }
+    }
+    
+
 }

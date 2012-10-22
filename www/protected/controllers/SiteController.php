@@ -34,6 +34,16 @@ class SiteController extends Controller
 				array('model' => $model));
 	}
 
+	public function actionMyactivity()
+	{
+		$model=new ActivityForm;
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$this->render('myactivity',
+				array('model' => $model));
+	}
+
+
 	/**
 	 * This is the action to handle external exceptions.
 	 */
